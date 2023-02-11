@@ -12,7 +12,7 @@ class Restful:
 
 
     def call(self, method: str, endpoint: str, params: Dict = None, data = None):
-
+        """Underlying call construct. Used to build specific requests."""
         url = self.base_url + endpoint
         headers = {
             'x-api-key': self.api_key
@@ -28,17 +28,8 @@ class Restful:
     def get(self, endpoint: str, params: Dict = None):
         """Makes a GET request"""
         return self.call(method='GET', endpoint=endpoint, params=params)
-        
+
 
     def post(self, endpoint: str, data: Dict = None, params: Dict = None):
         """Makes a POST request"""
         return self.call(method='POST', endpoint=endpoint, params=params, data=data)
-
-
-
-        
-
-
-
-
-
